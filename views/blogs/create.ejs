@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %> 
+<body>
+    
+  <%- include('../partials/nav.ejs') %> 
+    
+    <div class="uk-container">
+        <div class="create-blog content">
+            <form action="/blogs" method="post" class="uk-form-stacked">
+                <div class="uk-margin">
+                  <label for="title" class="uk-form-label">Blog title</label>
+                  <div class="uk-form-controls">
+                    <input type="text" id="title" name="title" class="uk-input uk-width-1-2" required />
+                  </div>
+                </div>
+                <div class="uk-margin">
+                  <label for="snippet" class="uk-form-label">Blog snippet</label>
+                  <div class="uk-form-controls">
+                    <input type="text" id="snippet" name="snippet" class="uk-input uk-width-1-2" required />
+                  </div>
+                </div>
+                <div class="uk-margin">
+                  <label for="body" class="uk-form-label">Blog body</label>
+                  <div class="uk-form-controls">
+                    <textarea type="text" id="body" name="body" class="uk-textarea uk-width-1-2" rows="4" required></textarea>
+                  </div>
+                </div>
+                <button class="uk-button uk-button-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('../partials/footer.ejs') %> 
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %> 
+<body class="uk-background-default">
+
+  <%- include('../partials/nav.ejs') %> 
+    
+  <div class="uk-section uk-section-default">
+    <div class="uk-container">
+
+      <h2><%= blog.title %></h2>
+
+      <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+        <div>
+          <p class="uk-text-lead"><%= blog.snippet %></p>
+          <p><%- blog.body %></p>
+        </div>
+        <div>
+          <div class="uk-cover-container">
+            <canvas height="600"></canvas>
+            <img src="/assets/images/hero-default-01.jpg" alt="Hero" uk-cover>
+          </div>
+        </div>
+      </div>
+      <p class="uk-margin ">
+        <a class="uk-button uk-button-danger uk-align-center" id="delete-action" data-doc="<%= blog._id %>">delete</a>
+      </p>
+    </div>
+  </div>
+
+  <%- include('../partials/footer.ejs') %>
+
+  <script>
+    const trashcan = document.querySelector('a#delete-action');
+
+    trashcan.addEventListener('click', e => {
+      const endpoint = `/blogs/${trashcan.dataset.doc}`;
+
+      fetch(endpoint, {
+        method: 'DELETE',
+      })
+      .then((response) => response.json())
+      .then((data) => window.location.href = data.redirect)
+      .catch(err => {
+        console.err(err);
+      })
+      
+    })
+  </script>
+
+</body>
+</html>

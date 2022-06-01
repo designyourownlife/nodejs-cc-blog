@@ -1,0 +1,17 @@
+body * {
+  font-family: proxima-nova, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji", sans-serif !important;
+}
+
+.uk-navbar-container {
+  border-bottom: 1px solid rgba(30, 135, 240, 0.6);
+}
+.uk-heading-small.uk-text-uppercase {
+  line-height: 1;
+}
+.uk-text-uppercase.uk-text-meta{
+  letter-spacing: 0.075rem;
+}
+.uk-container .uk-text-lead {
+  font-weight: 300;
+  color: #757575;
+}
